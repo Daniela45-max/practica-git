@@ -1,1 +1,3 @@
-# practica-git
+# practica de git
+
+## Instrucciones
