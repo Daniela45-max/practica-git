@@ -1,12 +1,6 @@
 [build]
-  # Comando que Netlify debe ejecutar para generar el sitio
-  command = "flutter build web --release"
+  # ESTE COMANDO INSTALA FLUTTER 3.38.1 Y LUEGO COMPILA EL SITIO
+  command = "git clone https://github.com/flutter/flutter.git -b 3.38.1 --depth 1 && export PATH=\"$PATH:$(pwd)/flutter/bin\" && flutter doctor && flutter pub get && flutter build web --release"
 
   # Directorio donde se encuentra el resultado de la compilacion
   publish = "build/web"
-
-[build.environment]
-  # Especificamos que use una version especifica de Flutter (la que usaste)
-  FLUTTER_VERSION = "3.38.1"
-  # Esta variable asegura que el comando 'flutter' este disponible en el PATH
-  PATH = "$PATH:/opt/buildhome/.flutter-sdk/bin"
