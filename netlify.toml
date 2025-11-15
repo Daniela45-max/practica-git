@@ -1,14 +1,3 @@
-[build]
-  # Comando que Netlify debe ejecutar para generar el sitio
-  command = "flutter build web --release"
-
-  # Directorio donde se encuentra el resultado de la compilacion
-  publish = "build/web"
-
-[build.environment]
-  # Especificamos que use una version especifica de Flutter
-  FLUTTER_VERSION = "3.38.1"
-  # Especificamos que use Linux para la compilacion
-  NIXPACKS_BUILD_CMD = "flutter build web --release" 
-  # Esta variable asegura que el comando 'flutter' este disponible
-  PATH = "$PATH:/opt/buildhome/.flutter-sdk/bin"
+git add netlify.toml
+git commit -m "fix: Ajusta netlify.toml para resolver errores de comandos basicos"
+git push origin main
