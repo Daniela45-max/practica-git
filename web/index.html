@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Notas PWA" />
+    <meta name="theme-color" content="#3949ab" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Notas PWA</title>
+    <script>
+      var serviceWorkerVersion = null;
+    </script>
+    <script src="flutter.js" defer></script>
+  </head>
+
+  <body>
+    <script>
+      window.addEventListener('load', function(ev) {
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          }
+        }).then(function(engineInitializer) {
+          return engineInitializer.initializeEngine();
+        }).then(function(appRunner) {
+          return appRunner.runApp();
+        });
+      });
+    </script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('flutter_service_worker.js').catch(function(e){console.warn('SW registration failed', e);});
+      }
+    </script>
+  </body>
+</html>

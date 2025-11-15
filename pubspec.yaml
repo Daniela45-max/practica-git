@@ -1,0 +1,24 @@
+name: pwa_notas_app
+description: PWA de notas con IndexedDB y soporte offline
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  idb_shim: ^2.6.7+1
+  uuid: ^3.0.7
+  connectivity_plus: ^4.0.2
+  provider: ^6.1.1 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
